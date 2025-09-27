@@ -1,13 +1,20 @@
-# Using the Dev Container (quick)
+# Using the Dev Container
 
-1. Add the `.devcontainer` folder and the `.vscode` files to your project root.
-2. In VS Code: *Remote-Containers: Reopen in Container*.
-3. Wait for image build; afterwards:
+## In VS Code
+
+1. Just open the folder in VS Code and it should prompt you to reopen in the container. If not, press F1 and select *Dev Containers: Reopen in Container*. It should build the container and open the workspace inside it.
+2. Wait for image build; afterwards CMake tools should pick up the `CMakeLists.txt` automatically. If not. 
    - Run the task **configure** (Terminal → Run Task).
    - Run the task **build** (Terminal → Run Task) or let `preLaunchTask` run it for you.
-4. Set breakpoints and press F5 (uses the provided `launch.json`).
+3. Set breakpoints and press F5 (uses the provided `launch.json`).
 
-Alternatively, if you have cmake extension installed, it should pick up the `CMakeLists.txt` automatically.
+## In github codespaces
 
-Notes on Apple M (arm64):
-- Docker Desktop runs Linux containers as `aarch64` on Apple Silicon; the chosen base image supports multi-arch builds so packages installed via apt will be the correct arch automatically.
+1. Fork the repo
+2. Create a new codespace from the forked repo
+   - Menu → Codespaces → New codespace
+   - Select, repo, branch, machine etc.
+   - Hit Create codespace
+3. Wait for code space to build and open
+4. You have basically working VS Code in the browser
+5. Set breakpoints and press F5
